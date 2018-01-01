@@ -2,10 +2,6 @@
 
 
 
-
-﻿
-﻿
-
 var Player = {
     Id: generateUUID(),
     totalCycles: 0,
@@ -65,43 +61,46 @@ function gameLoop() {
         display();
     }
 
+    updateCanvas();
+}
+
+function updateCanvas() {
 
 }
+
 function checkCycle(cycle) {
 
 
 
-if ((cycle % 6) == 0) {
-checkOxygen();
+    if ((cycle % 6) === 0) {
+        checkOxygen();
 
 
-}
+    }
 
 
-if ((cycle % 12) == 0) {
+    if ((cycle % 12) === 0) {
+        //test
 
 
-
-}
+    }
 
 }
 
 function checkOxygen(player, pod) {
 
-var oDiff = player - pod;
+    var oDiff = player - pod;
 
-if (oDiff < 0)
-{
+    if (oDiff < 0) {
 
+        //code
 
-
-}
-else
-{
-
+    }
+    else {
+        //code
 
 
-}
+    }
 
 }
 
@@ -113,16 +112,27 @@ function display() {
     }
 
     if (Player.totalCycles % 3 == 0) {
-        displayText("Here is the second text");
+        displayText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra leo in ex tristique placerat. Sed feugiat auctor massa sed convallis. Duis at viverra est, congue scelerisque sapien. Sed ut lobortis eros. Sed porttitor laoreet accumsan. Aliquam erat volutpat. Donec lacinia odio ac neque faucibus semper. Mauris elementum turpis a nibh feugiat, id tempor odio condimentum.");
     }
 
     $('#podTime').text(("Time: " + Player.podTime.toFixed(2)));
 }
 
 function displayText(text) {
+    console.log("writing text");
 
-    var tempText = $('#gameText').val();
-    $('#gameText').val(Player.podTime.toFixed(2) + ": " + text + "\n\n" + tempText);
+    var canvas = document.getElementById("textCanvas");
+
+    var ctx = canvas.getContext("2d");
+
+    ctx.font = "30px Comic Sans MS";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "left";
+    ctx.fillText(text, canvas.width / 2, canvas.height / 2); 
+
+    //var tempText = $('#gameText').text();
+    //$('#gameText').text(Player.podTime.toFixed(2) + ": " + text + "\n\n" + tempText);
+    //$('#gameText').animate({ top: "-100%" }, 5000);
 }
 
 function generateUUID() { // Public Domain/MIT
