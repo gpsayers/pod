@@ -40,6 +40,13 @@ var fps = .5,
     currentTime = 0,
     delta = 0;
 
+
+var textModel = {
+    text1: "",
+    text2: "",
+    text3: ""
+}
+
 function gameLoop() {
 
     window.requestAnimationFrame(gameLoop);
@@ -121,18 +128,25 @@ function display() {
 function displayText(text) {
     console.log("writing text");
 
-    var canvas = document.getElementById("textCanvas");
+    //textModel.text3 = textModel.text2;
+    //textModel.text2 = textModel.text1;
+    //textModel.text1 = text;
 
-    var ctx = canvas.getContext("2d");
+    //var canvas = document.getElementById("textCanvas");
 
-    ctx.font = "30px Comic Sans MS";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "left";
-    ctx.fillText(text, canvas.width / 2, canvas.height / 2); 
+    //var ctx = canvas.getContext("2d");
 
-    //var tempText = $('#gameText').text();
-    //$('#gameText').text(Player.podTime.toFixed(2) + ": " + text + "\n\n" + tempText);
-    //$('#gameText').animate({ top: "-100%" }, 5000);
+    //ctx.font = "30px Comic Sans MS";
+    //ctx.fillStyle = "white";
+    //ctx.textAlign = "left";
+    //ctx.fillText(textModel.text1, 5, 30);
+    //ctx.fillText(textModel.text2, 5, 120);
+    //ctx.fillText(textModel.text3, 5, 220);
+    ////ctx.fillText(text, canvas.width / 2, canvas.height / 2); 
+
+    var tempText = $('#gameText').text();
+    $('#gameText').text(Player.podTime.toFixed(2) + ": " + text + "\n\n" + tempText);
+    $('#gameText').animate({ top: "-100%" }, 5000);
 }
 
 function generateUUID() { // Public Domain/MIT
