@@ -21,9 +21,24 @@
             min-height: 60px !important;
         }
 
-        .container{
-
+        .control-panel-label {
+            font-family: monospace;
+            display: inline-block;
+            margin-right: 10px;
         }
+
+        .control-panel-value {
+            font-family: 'digital-7'; 
+            color: chartreuse;
+            display: inline-block;
+        }
+
+        @font-face {
+            font-family: 'digital-7';
+            src: url('Content/Fonts/digital-7.ttf') format('truetype');
+        }
+
+        .
     </style>
 
 
@@ -42,7 +57,7 @@
                 </div>
 
                 <div class="col-2">
-                    <table style="margin-top: 10px; width: 100%; table-layout: fixed">
+                    <table style="margin-top: 8px; width: 100%; table-layout: fixed; color: white;" >
                         <tr>
                             <td colspan="2" class="text-center">
                                 <span class="badge badge-pill badge-dark">Pod Sensors</span>
@@ -50,12 +65,44 @@
                         </tr>
                         <tr>
                             <td width="50%">
-                                Oxygen
+                                <div class="control-panel-label">Time</div><div id="changeme" class="control-panel-value">05:10</div>
                             </td>
                             <td width="50%">
-                                Temperature
+                                <div class="control-panel-label">Power</div><div id="changeme" class="control-panel-value">101</div>
                             </td>
                         </tr>
+                        <tr>
+                            <td width="50%">
+                                <div class="control-panel-label">O<sub>2</sub></div><div id="changeme" class="control-panel-value">97.2&percnt;</div>
+                                
+                            </td>
+                            <td width="50%">
+                                <div class="control-panel-label">&#8457;</div><div id="changeme" class="control-panel-value">58.1</div>       
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <div class="control-panel-label">PSI</div><div id="changeme" class="control-panel-value">0.94</div>
+                            </td>
+                            <td width="50%">
+                                <div class="control-panel-label">Hull</div><div id="changeme" class="control-panel-value">98&percnt;</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <span class="badge badge-pill badge-dark">Pilot Sensors</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <div class="control-panel-label">O<sub>2</sub></div><div id="changeme" class="control-panel-value">97.2&percnt;</div>
+
+                            </td>
+                            <td width="50%">
+                                <div class="control-panel-label">&#8457;</div><div id="changeme" class="control-panel-value">58.1</div>
+                            </td>
+                        </tr>
+
                     </table>
                 </div>
             </div>
