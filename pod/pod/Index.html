@@ -14,15 +14,15 @@
             background-size: cover;
         }
 
-        .template {
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
 
         .navbar {
             background-color: black;
             background-size: cover;
             min-height: 60px !important;
+        }
+
+        .container{
+
         }
     </style>
 
@@ -33,19 +33,33 @@
 
     </nav>
 
-    <div class="container">
-        <div style="background-color: black; min-height: 1900px;">
-            <div class="row">
-                <div class="col-11">
-                    <!--<canvas id="textCanvas" width="1000" height="1000"></canvas>-->
-                    <div id="gameText" style="color: white; white-space: pre-wrap; background-color: dimgrey; margin: 12px; height: 200px; overflow: auto;"></div>
-                </div>
-                <div class="col-1">
+    <div class="container" style="background-color: black; min-height: 1900px;">
 
+            <div class="row">
+                <div class="col-10" style="padding-right: 0px;">
+                    <!--<canvas id="textCanvas" wi!--<canvas000" height="1000"></canvas>-->
+                    <div id="gameText" style="color: white; white-space: pre-wrap; background-color: dimgrey; margin-top: 12px; height: 200px; overflow: auto;"></div>
+                </div>
+
+                <div class="col-2">
+                    <table style="margin-top: 10px; width: 100%; table-layout: fixed">
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <span class="badge badge-pill badge-dark">Pod Sensors</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                Oxygen
+                            </td>
+                            <td width="50%">
+                                Temperature
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
-        </div>
 
 
     </div>
