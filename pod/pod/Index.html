@@ -38,7 +38,11 @@
             src: url('Content/Fonts/digital-7.ttf') format('truetype');
         }
 
-        .
+        .notification {
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+            
+        }
     </style>
 
 
@@ -53,39 +57,58 @@
             <div class="row">
                 <div class="col-10" style="padding-right: 0px;">
                     <!--<canvas id="textCanvas" wi!--<canvas000" height="1000"></canvas>-->
-                    <div id="gameText" style="color: white; white-space: pre-wrap; background-color: dimgrey; margin-top: 12px; height: 200px; overflow: auto;"></div>
+                    <div id="gameText" style="color: white; white-space: pre-wrap; background-color: dimgrey; margin-top: 12px; height: 200px; overflow: auto;">
+                        
+                    </div>
                 </div>
 
                 <div class="col-2">
                     <table style="margin-top: 8px; width: 100%; table-layout: fixed; color: white;" >
                         <tr>
-                            <td colspan="2" class="text-center">
+                            <td colspan="4" class="text-center">
                                 <span class="badge badge-pill badge-dark">Pod Sensors</span>
                             </td>
                         </tr>
                         <tr>
-                            <td width="50%">
-                                <div class="control-panel-label">Time</div><div id="changeme" class="control-panel-value">05:10</div>
+                            <td width="25%">
+                                <div class="control-panel-label">Time</div>
                             </td>
-                            <td width="50%">
-                                <div class="control-panel-label">Power</div><div id="changeme" class="control-panel-value">101</div>
+                            <td width="25%">
+                                <div id="gameTime" class="control-panel-value">05:10</div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td width="50%">
-                                <div class="control-panel-label">O<sub>2</sub></div><div id="changeme" class="control-panel-value">97.2&percnt;</div>
-                                
+                            <td width="25%">
+                                <div class="control-panel-label">Power</div>
                             </td>
-                            <td width="50%">
-                                <div class="control-panel-label">&#8457;</div><div id="changeme" class="control-panel-value">58.1</div>       
+                            <td width="25%">
+                                <div id="changeme" class="control-panel-value">101</div>
                             </td>
                         </tr>
                         <tr>
-                            <td width="50%">
-                                <div class="control-panel-label">PSI</div><div id="changeme" class="control-panel-value">0.94</div>
+                            <td width="25%">
+                                <div class="control-panel-label">O<sub>2</sub></div>
                             </td>
-                            <td width="50%">
-                                <div class="control-panel-label">Hull</div><div id="changeme" class="control-panel-value">98&percnt;</div>
+                            <td width="25%">
+                                <div id="changeme" class="control-panel-value">97.2&percnt;</div>                           
+                            </td>
+                            <td width="25%">
+                                <div class="control-panel-label">&#8457;</div>
+                            </td>
+                            <td width="25%">
+                                <div id="changeme" class="control-panel-value">58.1</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%">
+                                <div class="control-panel-label">PSI</div>
+                            </td>
+                            <td width="25%">
+                                <div id="changeme" class="control-panel-value">0.94</div>
+                            </td>
+                            <td width="25%">
+                                <div class="control-panel-label">Hull</div>
+                            </td>
+                            <td width="25%">
+                                <div id="changeme" class="control-panel-value">98&percnt;</div>
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +129,12 @@
                     </table>
                 </div>
             </div>
-
+        <div class="row">
+            <div class="col-12">
+                <div id="player" style="word-wrap: break-word; color: white;"></div>
+            </div>
+            
+        </div>
 
 
     </div>

@@ -19,6 +19,8 @@ var Player = {
 
     podTime: 5.10,
 
+    messages: [],
+
 };
 
 var game = {
@@ -41,11 +43,6 @@ var fps = .5,
     delta = 0;
 
 
-var textModel = {
-    text1: "",
-    text2: "",
-    text3: ""
-}
 
 function gameLoop() {
 
@@ -58,22 +55,20 @@ function gameLoop() {
 
         Player.totalCycles++;
 
-        Player.podTime = Player.podTime + 0.10;
+        Player.podTime = Player.podTime + 0.01;
 
         $('#player').text(JSON.stringify(game));
 
 
         lastTime = currentTime - (delta % interval);
 
-        display();
+        displayIntro();
     }
 
-    updateCanvas();
-}
-
-function updateCanvas() {
+    updateDisplay();
 
 }
+
 
 function checkCycle(cycle) {
 
@@ -87,7 +82,7 @@ function checkCycle(cycle) {
 
 
     if ((cycle % 12) === 0) {
-        //test
+        checkTemp();
 
 
     }
@@ -111,42 +106,50 @@ function checkOxygen(player, pod) {
 
 }
 
-function display() {
+function checkTemp(player, pod) {
 
-    if (Player.totalCycles == 1) {
+    var tDiff = player - pod;
+
+    if (tDiff < 0) {
+
+
+    }
+    else {
+
+
+    }
+}
+
+function displayIntro() {
+
+    if (Player.totalCycles === 1) {
 
         displayText("Here is the first text");
     }
 
-    if (Player.totalCycles % 3 == 0) {
+    if (Player.totalCycles % 3 === 0) {
         displayText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra leo in ex tristique placerat. Sed feugiat auctor massa sed convallis. Duis at viverra est, congue scelerisque sapien. Sed ut lobortis eros. Sed porttitor laoreet accumsan. Aliquam erat volutpat. Donec lacinia odio ac neque faucibus semper. Mauris elementum turpis a nibh feugiat, id tempor odio condimentum.");
     }
 
-    $('#podTime').text(("Time: " + Player.podTime.toFixed(2)));
+
 }
 
-function displayText(text) {
-    console.log("writing text");
+function updateDisplay() {
 
-    //textModel.text3 = textModel.text2;
-    //textModel.text2 = textModel.text1;
-    //textModel.text1 = text;
+    $("#gameTime").text(Player.podTime.toFixed(2));
 
-    //var canvas = document.getElementById("textCanvas");
+}
 
-    //var ctx = canvas.getContext("2d");
+function displayText(message) {
 
-    //ctx.font = "30px Comic Sans MS";
-    //ctx.fillStyle = "white";
-    //ctx.textAlign = "left";
-    //ctx.fillText(textModel.text1, 5, 30);
-    //ctx.fillText(textModel.text2, 5, 120);
-    //ctx.fillText(textModel.text3, 5, 220);
-    ////ctx.fillText(text, canvas.width / 2, canvas.height / 2); 
+    var text = $('<div>').addClass('notification').css('opacity', '0').text(message).prependTo('div#gameText');
+    text.animate({ opacity: 1 }, 500, 'linear', function () {
+        // Do this every time we add a new message, this way we never have a large backlog to iterate through. Keeps things faster.
+       // Notifications.clearHidden();
+    });
 
-    var tempText = $('#gameText').text();
-    $('#gameText').text(Player.podTime.toFixed(2) + ": " + text + "\n\n" + tempText);
-    $('#gameText').animate({ top: "-100%" }, 5000);
+    //$("#gameText").add("div").text(text);
+
 }
 
 function generateUUID() { // Public Domain/MIT
