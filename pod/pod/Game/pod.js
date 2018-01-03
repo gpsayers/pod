@@ -75,14 +75,14 @@ function checkCycle(cycle) {
 
 
     if ((cycle % 6) === 0) {
-        checkOxygen();
+        checkOxygen(Player.playerOxygen, Player.podOxygen);
 
 
     }
 
 
     if ((cycle % 12) === 0) {
-        checkTemp();
+        checkTemp(Player.playerTemp, Player.podTemp);
 
 
     }
@@ -91,17 +91,49 @@ function checkCycle(cycle) {
 
 function checkOxygen(player, pod) {
 
-    var oDiff = player - pod;
 
-    if (oDiff < 0) {
+    if (pod > 16) {
 
-        //code
+        if (Player.playerOxygen < 64) {
+            Player.playerOxygen = 64;
+        }
+
+        //player rises
+        if (pod > 20) {          
+
+            Player.playerOxygen = Player.playerOxygen + .50;
+        }
+        else if (pod > 18) {
+            Player.playerOxygen = Player.playerOxygen + .25;
+        }
+        else {
+            Player.playerOxygen = Player.playerOxygen + .10;
+        }
+
+
+
+        if (Player.playerOxygen > 95) {
+            Player.playerOxygen = 95;
+        }
+
 
     }
     else {
-        //code
+        //player drops
 
+        if (pod < 6) {
+            Player.playerOxygen--;
+        }
+        else if (pod < 10) {
+            Player.playerOxygen = Player.playerOxygen - 0.5;
+        }
+        else {
+            Player.playerOxygen = Player.playerOxygen - 0.20;
+        }
 
+        if (Player.playerOxygen < 52) {
+            Player.playerOxygen = 52;
+        }
     }
 
 }
