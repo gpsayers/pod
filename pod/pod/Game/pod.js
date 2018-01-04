@@ -19,14 +19,12 @@ var Player = {
     playerFood: 100,
     playerWater: 100,
 
-    podTime: 5.10,
-
-    messages: [],
+    podTime: 5.10
 
 };
 
 var game = {
-    Player: Player,
+    gamePlayer: Player,
     engageLights: false,
     engageHeat: false,
     engageRation: false,
@@ -48,6 +46,9 @@ var fps = .5,
     delta = 0;
 
 
+function init() {
+    $("#heatField").hide(true);
+}
 
 function gameLoop() {
 
@@ -80,22 +81,14 @@ function gameLoop() {
 }
 
 function checkEvents(myEvent) {
-    myEvent = myEvent || 0;
+    myEvent = myEvent || "";
 
     switch (myEvent) {
-        case 1:
+        case "lights":
+            game.engageLights = !game.engageLights;
             Player.totalPower--;
             displayText("Light fills the cabin and reveals a control panel of buttons.");
-            var r = $('<button/>',
-                {
-                    text: 'Heat',
-                    id: 'btn_2',
-                    click: function() {
-                        game.engageHeat = true;
-                        checkEvents(2);
-                    }
-                });
-            $("#cell12").append(r);
+            $("#heatField").toggle();
             break;
     case 2:
             Player.totalPower--;
@@ -241,12 +234,12 @@ function displayIntro() {
 
         displayText("You wake up confined to a dark compartment with some flashing lights infront of you.");
 
-        var r = $('<button/>', {
-            text: 'Lights', 
-            id: 'btn_1',
-            click: function () { game.engageLights = true; checkEvents(1) }
-        });
-        $("#cell11").append(r);
+        //var r = $('<button/>', {
+        //    text: 'Lights', 
+        //    id: 'btn_1',
+        //    click: function () { game.engageLights = true; checkEvents(1) }
+        //});
+        //$("#cell11").append(r);
 
 
     }
@@ -296,6 +289,8 @@ function generateUUID() { // Public Domain/MIT
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
 }
+
+init();
 
 gameLoop();
 

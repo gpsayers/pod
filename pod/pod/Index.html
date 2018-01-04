@@ -43,6 +43,19 @@
             margin-bottom: 20px;
             
         }
+        fieldset {
+            border: 1px solid dimgray;
+            padding: 0 10px 10px 10px;
+            color: dimgray;
+        }
+        legend {
+            width: inherit !important;
+            border-bottom: none;
+            font-size: 14px;
+            padding: 0 10px;
+
+        }
+        
     </style>
 
 
@@ -167,25 +180,37 @@
             </div>
         </div>
         <div class="row">
+
             <div class="col-12">
-                <table>
-                    <tr>
-                        <td>
-                            <div id="cell11"></div>
-                        </td>
-                        <td>
-                            <div id="cell21"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="cell12"></div>
-                        </td>
-                        <td>
-                            <div id="cell22"></div>
-                        </td>
-                    </tr>
-                </table>
+                <button class="btn btn-light" onclick="checkEvents('lights')">Lights</button>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                <fieldset id="heatField">
+                    <legend>Heat</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="cell11"></div>
+                            </td>
+                            <td>
+                                <div id="cell21"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="cell12"></div>
+                            </td>
+                            <td>
+                                <div id="cell22"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
             </div>
         </div>
         <div class="row">
@@ -198,7 +223,8 @@
 
     </div>
 
-    <script src="Game/pod.js"></script>
+<script src="Game/pod.js"></script>
+
 </body>
 
 
