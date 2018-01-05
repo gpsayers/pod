@@ -1,0 +1,79 @@
+Ship explodes. Climb into escape pod. But the pod is damaged.
+
+Solar panel malfunction. Engage battery power.
+
+Battery power limited. 10 
+
+Engage heat:
+
+Heat escape pod
+	Raises room temperature
+
+Heat frozen ration
+	Gives food
+
+Melt ice 
+	Gives water
+	
+	After 2 times
+		Add new option: Thaw CO2 filter
+
+
+
+
+
+
+Scrub air filter
+
+Warm solar panel
+
+
+
+Stats:
+	Temperature 
+	105: Dead
+	104.9-103: Heatstroke
+	102.9-100.1: Sweaty
+	100-98.6: OK
+	98.6-97: OK 
+	96.9-96: Cold
+	95.9-92: Shivering	
+	91.9-90: Impared 
+	89.9: Unconcious 
+	Health
+	O2 Saturation 
+	95-65: OK 
+	64-55: Impared 
+	54: Unconcious
+	Room O2
+	21: Normal
+	19.5-16: Reduced
+	15.9-10: Impared
+	6: Dead
+	
+	
+	
+Lights
+	Status
+Heat
+	Air
+	Rations
+	Water
+	Solar Panel
+	
+Repair offline
+
+Solar Panel offline
+	
+Navigation offline
+
+Landing offline
+
+Welcome to the Nautilus Mark III class escape craft designated EC-1138-SW and assigned to the colonial survey vessel UES Ambition.
+You have experienced an extra orbital event of unknown origin. General evacutation was ordered at 1.22 SET.
+Position: UNKNOWN
+Status: OK
+Orders: NULL
+Destination: NULL
+
+
