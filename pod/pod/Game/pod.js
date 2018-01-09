@@ -19,8 +19,8 @@ var Player = {
     playerFood: 100,
     playerWater: 100,
 
-    podTime: 5.10
-
+    podTime: 5.10,
+    podStatus: "Damaged"
 };
 
 var game = {
@@ -47,7 +47,13 @@ var fps = .5,
 
 
 function init() {
-    $("#heatField").hide(true);
+    $("#lifeField").visible(false);
+    $("#repairField").visible(false);
+    $("#powerField").visible(false)
+    $("#navField").visible(false);
+    $("#landField").visible(false);
+    //$("#heatField").hide(true);
+    //$("#heatField").hide(true);
 }
 
 function gameLoop() {
@@ -88,7 +94,12 @@ function checkEvents(myEvent) {
             game.engageLights = !game.engageLights;
             Player.totalPower--;
             displayText("Light fills the cabin and reveals a control panel of buttons.");
-            $("#heatField").toggle();
+            $("#lifeField").visible(game.engageLights);
+            $("#repairField").visible(game.engageLights);
+            $("#powerField").visible(game.engageLights);
+            $("#navField").visible(game.engageLights);
+            $("#landField").visible(game.engageLights);
+
             break;
     case 2:
             Player.totalPower--;

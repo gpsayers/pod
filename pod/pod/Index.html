@@ -71,12 +71,12 @@
             <div class="col-10" style="padding-right: 0px;">
                 <!--<canvas id="textCanvas" wi!--<canvas000" height="1000"></canvas>-->
                 <div id="gameText" style="color: white; white-space: pre-wrap; background-color: dimgrey; margin-top: 12px; height: 200px; overflow: auto;">
-                        
+
                 </div>
             </div>
 
             <div class="col-2">
-                <table style="margin-top: 8px; width: 100%; table-layout: fixed; color: white;" >
+                <table style="margin-top: 8px; width: 100%; table-layout: fixed; color: white;">
                     <tr>
                         <td colspan="4" class="text-center">
                             <span class="badge badge-pill badge-dark">Pod Sensors</span>
@@ -101,7 +101,7 @@
                             <div class="control-panel-label">O<sub>2</sub></div>
                         </td>
                         <td width="25%">
-                            <div id="podOxy" class="control-panel-value">20.9&percnt;</div>                           
+                            <div id="podOxy" class="control-panel-value">20.9&percnt;</div>
                         </td>
                         <td width="25%">
                             <div class="control-panel-label">&#8457;</div>
@@ -112,7 +112,7 @@
                     </tr>
                     <tr>
                         <td width="25%">
-                            <div class="control-panel-label">Atm</div>
+                            <div class="control-panel-label">Life</div>
                         </td>
                         <td width="25%">
                             <div id="changeme" class="control-panel-value">0.94</div>
@@ -189,8 +189,122 @@
         <div class="row">
 
             <div class="col-12">
-                <fieldset id="heatField">
-                    <legend>Heat</legend>
+                <fieldset id="lifeField">
+                    <legend>Life Support</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <button class="btn btn-light" onclick="checkEvents('')">Status</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-light" onclick="checkEvents('')">Heat</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-light" onclick="checkEvents('')">CO<sub>2</sub> Filter</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                <fieldset id="repairField">
+                    <legend>Repair</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="cell11"></div>
+                            </td>
+                            <td>
+                                <div id="cell21"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="cell12"></div>
+                            </td>
+                            <td>
+                                <div id="cell22"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                <fieldset id="powerField">
+                    <legend>Power</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="cell11"></div>
+                            </td>
+                            <td>
+                                <div id="cell21"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="cell12"></div>
+                            </td>
+                            <td>
+                                <div id="cell22"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                <fieldset id="navField">
+                    <legend>Navigation</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="cell11"></div>
+                            </td>
+                            <td>
+                                <div id="cell21"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="cell12"></div>
+                            </td>
+                            <td>
+                                <div id="cell22"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12">
+                <fieldset id="landField">
+                    <legend>Landing</legend>
                     <table>
                         <tr>
                             <td>
@@ -217,14 +331,15 @@
             <div class="col-12">
                 <div id="player" style="word-wrap: break-word; color: white;"></div>
             </div>
-            
+
         </div>
 
 
     </div>
 
-<script src="Game/pod.js"></script>
 
+    <script src="Scripts/helper/helper.js"></script>
+    <script src="Game/pod.js"></script>
 </body>
 
 
